@@ -18,7 +18,7 @@ import os
 try:
     from urlparse import urljoin
 except ImportError: # Python 3
-    pass  # TODO: include urljoin
+    from urllib.parse import urljoin
 
 from time import sleep
 

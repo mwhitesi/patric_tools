@@ -15,8 +15,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Example: downloading AMR data sets from the PATRIC database
 
 """
+
 from joblib import Parallel, delayed
 from patric_tools import amr, genomes
+
+
 
 # Find all antibiotic resistance data sets that match some criteria
 amr_datasets = amr.list_amr_datasets(min_resistant=20,
@@ -42,3 +45,6 @@ def download_genome(g_id):
 # Download 4 genomes in parallel
 Parallel(n_jobs=4)(delayed(download_genome)(g_id) for g_id in genome_ids)
 print "Done."
+
+
+
